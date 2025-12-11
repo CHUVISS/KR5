@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><body>
+<h1>Генератор никнеймов</h1>
+<button onclick="gen()">Сгенерировать</button>
+<p id="out"></p>
+<script>
+async function gen(){
+  let r=await fetch("/api/nick");
+  let d=await r.json();
+  document.getElementById("out").innerText=d.nickname;
+}
+</script>
+</body></html>
